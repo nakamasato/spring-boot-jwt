@@ -35,15 +35,14 @@ public class User {
   private String lastName;
 
   /**
-   * Roles are being eagerly loaded here because
-   * they are a fairly small collection of items for this example.
+   * Roles are being eagerly loaded here because they are a fairly small collection of items for
+   * this example.
    */
   @ManyToMany(fetch = FetchType.EAGER)
-  @JoinTable(name = "user_role", joinColumns
-      = @JoinColumn(name = "user_id",
-      referencedColumnName = "id"),
-      inverseJoinColumns = @JoinColumn(name = "role_id",
-          referencedColumnName = "id"))
+  @JoinTable(
+      name = "user_role",
+      joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
   private List<Role> roles;
 
   public Long getId() {

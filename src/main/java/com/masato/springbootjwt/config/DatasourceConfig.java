@@ -41,8 +41,7 @@ public class DatasourceConfig {
     LocalContainerEntityManagerFactoryBean entityManagerFactory =
         new LocalContainerEntityManagerFactoryBean();
     entityManagerFactory.setDataSource(ds);
-    entityManagerFactory.setPackagesToScan(
-        new String[] {"com.masato.springbootjwt.entity"});
+    entityManagerFactory.setPackagesToScan(new String[] {"com.masato.springbootjwt.entity"});
     JpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
     entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
     return entityManagerFactory;
