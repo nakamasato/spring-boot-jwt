@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "app_role")
+@Table(name = "role")
 public class Role {
   private static final long serialVersionUID = 1L;
 
@@ -16,11 +16,8 @@ public class Role {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "role_name")
+  @Column(name = "name")
   private String roleName;
-
-  @Column(name = "description")
-  private String description;
 
   public Long getId() {
     return id;
@@ -36,13 +33,5 @@ public class Role {
 
   public void setRoleName(String roleName) {
     this.roleName = roleName;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
   }
 }
