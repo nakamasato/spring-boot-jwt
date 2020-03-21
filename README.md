@@ -12,7 +12,7 @@
 1. Start App
 
     ```
-    ./mvnw spring-boot:run
+    docker-compose up
     ```
     
 1. Get token with `joe.doe`
@@ -42,3 +42,7 @@
     ± curl http://localhost:8080/springjwt/users -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidGVzdGp3dHJlc291cmNlaWQiXSwidXNlcl9uYW1lIjoiYWRtaW4uYWRtaW4iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNTg0MjEzNTIwLCJhdXRob3JpdGllcyI6WyJTVEFOREFSRF9VU0VSIiwiQURNSU5fVVNFUiJdLCJqdGkiOiI0OTM3YWI2ZC04ZGJkLTRhMTktOTMyZi0xNDA5YmJhYzc5ZDUiLCJjbGllbnRfaWQiOiJ0ZXN0and0Y2xpZW50aWQifQ.jsh2pxKY-fOdkOQa8tE72DQ69A_NsoDxJy4BdJMBZe4"
     [{"id":1,"username":"john.doe","firstName":"John","lastName":"Doe","roles":[{"id":1,"roleName":"STANDARD_USER","description":"Standard User - Has no admin rights"}]},{"id":2,"username":"admin.admin","firstName":"Admin","lastName":"Admin","roles":[{"id":1,"roleName":"STANDARD_USER","description":"Standard User - Has no admin rights"},{"id":2,"roleName":"ADMIN_USER","description":"Admin User - Has permission to perform admin tasks"}]}]
     ```
+
+# Notice
+
+If you want to use h2 for datastore, you can revert [#4](https://github.com/nakamasato/spring-boot-jwt/pull/4)

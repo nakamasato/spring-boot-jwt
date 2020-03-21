@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    container_name: spring-boot-jwt-db
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db_example
+    volumes:
+      - ./docker/db:/docker-entrypoint-initdb.d
+    restart: always
+
+  spring-boot-jwt:
+    build: .
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    working_dir: /app
+    ports:
+      - 8080:8080
+    command: mvn clean spring-boot:run
+    depends_on:
+      - db
